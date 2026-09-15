@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - Microstock Studio Pro</title>
+<meta name="description" content="What Microstock Studio Pro accesses on your PC, what it sends to your chosen AI provider, and what it does not do.">
+<meta name="theme-color" content="#5761ef">
+<style>
+  :root{
+    --purple:#7c3aed; --blue:#2563eb;
+    --grad:linear-gradient(135deg,var(--purple),var(--blue));
+    --bg:#f7f7fb; --surface:#fff; --border:#e3e3ec; --text:#16161d; --muted:#6b6b7b;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#0f0f16; --surface:#17171f; --border:#2a2a37; --text:#f1f1f6; --muted:#9797a8; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:44rem;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+  h1{margin:0 0 .5rem;font-size:2rem;font-weight:800;letter-spacing:-.02em;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h2{margin-top:2.25rem;font-size:1.3rem;border-top:1px solid var(--border);padding-top:1.5rem}
+  p,li{line-height:1.65}
+  code{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:.1rem .35rem;font-size:.9em}
+  .callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--purple);
+    border-radius:8px;padding:.9rem 1.1rem;margin:1.25rem 0;font-size:.95rem;color:var(--muted)}
+  .muted{color:var(--muted);font-size:.9rem}
+  a{color:var(--purple)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="muted"><strong>Microstock Studio Pro</strong> &mdash; a Windows app by Rhizkit. Effective date: 15 September 2026.</p>
+
+  <div class="callout">
+    <strong>Short version:</strong> Upscaling, quality-checking, metadata
+    embedding, and CSV export all run locally on your PC. The one thing that
+    leaves your machine is the image itself when you ask the app to generate
+    an AI title/description/keywords &mdash; that image is sent directly to
+    the AI provider <em>you</em> choose (OpenAI, Google Gemini, or
+    OpenRouter), using an API key <em>you</em> supply. Rhizkit has no server,
+    never sees your images, and never sees your API key.
+  </div>
+
+  <h2>What the app accesses</h2>
+  <p>The app only touches files you explicitly point it at:</p>
+  <ul>
+    <li>It <strong>reads the image files</strong> you add to the queue (a folder or individual files you pick).</li>
+    <li>It <strong>writes new, processed copies</strong> (upscaled, with embedded metadata) plus CSV export files to the output folder you choose. Your original source images are never modified, moved, or deleted.</li>
+  </ul>
+
+  <h2>What gets sent over the network - and to whom</h2>
+  <p>Microstock Studio Pro does not operate any server of its own. The only
+  network calls the app makes are the ones needed to generate AI
+  title/description/keywords for an image, and only when you have quality-gated
+  it through and the app reaches that step:</p>
+  <ul>
+    <li>The (upscaled) image is sent directly from your PC to the AI provider you selected in Settings - currently <strong>OpenAI</strong>, <strong>Google Gemini</strong>, or <strong>OpenRouter</strong> - using the API key you entered yourself (bring-your-own-key). That request goes straight from your PC to that provider's own servers; it never passes through anything Rhizkit operates.</li>
+    <li>Handling of that image once it reaches the provider (retention, training use, etc.) is governed by <strong>that provider's own privacy policy</strong>, not this one. Check the provider you choose to configure for their current data-handling terms.</li>
+    <li>If you don't have a provider configured, or you never click a step that calls it, no image is ever sent anywhere.</li>
+  </ul>
+  <p>Everything else - upscaling (bundled Real-ESRGAN), the automated quality
+  gate (sharpness/exposure/noise checks), metadata embedding (bundled
+  ExifTool), and CSV export - runs entirely on your PC with no network call
+  at all.</p>
+
+  <h2>What is stored on your PC</h2>
+  <p>The app keeps a small preference file locally, under
+  <code>%LOCALAPPDATA%\MicrostockStudioPro\config.json</code> (on a Microsoft
+  Store install, this is redirected inside the app's own package data folder
+  under <code>%LOCALAPPDATA%\Packages\</code>). It contains:</p>
+  <ul>
+    <li>The API key(s) you enter for your chosen AI provider(s) - <strong>stored locally in plain text on your own PC</strong>, never transmitted anywhere except directly to that provider's own API endpoint as part of a request you initiate. Treat this file the same way you'd treat any file holding a credential: it's only as safe as your own PC's user account.</li>
+    <li>Your last-used source/output folders and processing options (upscale scale, quality-gate toggle, keyword preset, CSV export choices, etc.).</li>
+    <li>Optional creator name / copyright notice / priority keywords you choose to fill in for embedding into your exported images.</li>
+  </ul>
+  <p>All of this can be cleared at any time by deleting that file, or by resetting the app from Windows Settings.</p>
+
+  <h2>What the app does NOT do</h2>
+  <ul>
+    <li>It contains <strong>no analytics, telemetry, advertising, or tracking SDK</strong> of any kind.</li>
+    <li>It does <strong>not</strong> capture your screen, read your clipboard, or log keystrokes.</li>
+    <li>It does <strong>not</strong> send anything to Rhizkit. There is no Rhizkit-operated server in this app's data path at all.</li>
+    <li>It does <strong>not</strong> send an image anywhere unless you have configured a provider and the app reaches the AI-metadata step for that image.</li>
+  </ul>
+
+  <h2>Third parties</h2>
+  <p>The only third parties involved are whichever AI provider(s) you
+  personally configure in Settings - OpenAI, Google (Gemini), and/or
+  OpenRouter. The app also relies on the Microsoft Edge WebView2 Runtime (a
+  standard Windows component from Microsoft) to draw its interface; that
+  component does not send anything over the network on this app's behalf. No
+  other third party is involved.</p>
+
+  <h2>Children</h2>
+  <p>Microstock Studio Pro is a general-purpose productivity tool not
+  directed at children and collects no information from anyone on Rhizkit's
+  behalf, including children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted here with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy, or anything else: <a href="mailto:rhizkit.labs@gmail.com">rhizkit.labs@gmail.com</a>.</p>
+</main>
+</body>
+</html>
