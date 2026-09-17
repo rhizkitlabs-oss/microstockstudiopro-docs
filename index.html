@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microstock Studio Pro</title>
+<meta name="description" content="Batch-process AI-generated images for microstock submission: upscale, quality-check, AI metadata, and CSV export - all on your own PC.">
+<meta name="theme-color" content="#5761ef">
+<style>
+  :root{
+    --purple:#7c3aed; --blue:#2563eb;
+    --grad:linear-gradient(135deg,var(--purple),var(--blue));
+    --bg:#f7f7fb; --surface:#fff; --border:#e3e3ec; --text:#16161d; --muted:#6b6b7b;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#0f0f16; --surface:#17171f; --border:#2a2a37; --text:#f1f1f6; --muted:#9797a8; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:44rem;margin:0 auto;padding:3rem 1.5rem 4rem}
+  header{text-align:center;margin-bottom:2.5rem}
+  .badge{display:inline-block;width:64px;height:64px;border-radius:16px;background:var(--grad);
+    color:#fff;font-weight:800;font-size:1.5rem;line-height:64px;margin-bottom:1rem}
+  h1{margin:0 0 .5rem;font-size:2.1rem;font-weight:800;letter-spacing:-.02em;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{color:var(--muted);font-size:1.1rem;margin:0 auto;max-width:34rem;line-height:1.5}
+  h2{margin-top:2.25rem;font-size:1.2rem;border-top:1px solid var(--border);padding-top:1.5rem}
+  p,li{line-height:1.65}
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+  .steps li{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem}
+  .steps b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .callout{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--purple);
+    border-radius:8px;padding:.9rem 1.1rem;margin:1.25rem 0;font-size:.95rem;color:var(--muted)}
+  .price{font-size:1.4rem;font-weight:800}
+  .muted{color:var(--muted);font-size:.9rem}
+  a{color:var(--purple)}
+  footer{margin-top:2.5rem;border-top:1px solid var(--border);padding-top:1.5rem;color:var(--muted);font-size:.9rem;text-align:center}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="badge">M</div>
+    <h1>Microstock Studio Pro</h1>
+    <p class="tagline">A Windows app by Rhizkit. Batch-process AI-generated images for microstock submission &mdash; upscale, quality-check, AI-write the metadata, and export ready-to-upload CSVs, all on your own PC.</p>
+  </header>
+
+  <h2>One pipeline, four steps</h2>
+  <ul class="steps">
+    <li><b>Upscale</b> &mdash; batch-upscale with a bundled, local copy of Real-ESRGAN. No separate install, no cloud service.</li>
+    <li><b>Quality gate</b> &mdash; an automated check flags soft focus, blown highlights, and crushed shadows before you waste a submission slot.</li>
+    <li><b>AI metadata</b> &mdash; generates a title, description, and keyword set for every image using the AI vision provider you configure (OpenAI, Google Gemini, or OpenRouter &mdash; your choice, your own API key).</li>
+    <li><b>Metadata + export</b> &mdash; embeds the result into each image and writes Adobe Stock and/or Freepik-formatted CSVs, ready to upload.</li>
+  </ul>
+
+  <div class="callout">
+    Your images stay yours: everything runs locally on your PC except the AI-metadata step, which goes straight from your PC to the provider you personally configure. Nothing passes through a Rhizkit server, ever.
+  </div>
+
+  <h2>Bring your own API key &mdash; no subscription</h2>
+  <p>Pick OpenAI, Gemini, or OpenRouter, paste in your own key, and that's it. One purchase, use it as much as you want &mdash; no per-image credit system, no monthly fee on top of what you already pay your AI provider directly.</p>
+
+  <h2>Pricing</h2>
+  <p class="price">$19.99 <span class="muted" style="font-weight:400;font-size:1rem">&mdash; one-time purchase</span></p>
+  <p class="muted">Available on the Microsoft Store for Windows 10 (1809+) and Windows 11.</p>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> &middot; <a href="mailto:rhizkit.labs@gmail.com">rhizkit.labs@gmail.com</a></p>
+    <p>&copy; 2026 Rhizkit</p>
+  </footer>
+</main>
+</body>
+</html>
